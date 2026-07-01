@@ -227,7 +227,7 @@
                     <span data-fs-error="name"></span>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group">X
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" data-fs-field required>
                     <span data-fs-error="email"></span>
@@ -252,5 +252,617 @@
         formspree('initForm', { formElement: '#my-form', formId: 'mbdvdgrk' });
     </script>
     <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaldy Bernabe | Senior MEP Project & Commissioning Leader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0B0F19;
+            --bg-card: #151D30;
+            --bg-card-hover: #1E2942;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --accent: #00F5D4;
+            --accent-gradient: linear-gradient(135deg, #00F5D4 0%, #00B4D8 100%);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-main);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-card);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+
+        /* Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .gradient-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .mono {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+        }
+
+        /* Header Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px 0;
+            position: relative;
+            background: radial-gradient(circle at 80% 20%, rgba(0, 245, 212, 0.05) 0%, transparent 50%);
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 245, 212, 0.06);
+            border: 1px solid rgba(0, 245, 212, 0.2);
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: #000;
+            box-shadow: 0 4px 20px rgba(0, 245, 212, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 245, 212, 0.4);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .btn-secondary:hover {
+            background: var(--border-color);
+            transform: translateY(-2px);
+        }
+
+        /* Bento Grid Highlights */
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            height: 1px;
+            flex-grow: 1;
+            background: var(--border-color);
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 6rem;
+        }
+
+        .bento-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 245, 212, 0.3);
+            background: var(--bg-card-hover);
+        }
+
+        .bento-card.col-2 {
+            grid-column: span 2;
+        }
+
+        .card-num {
+            font-family: var(--font-mono);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Skills Matrix Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            border-left: 3px solid var(--accent);
+            padding-left: 0.75rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            background: rgba(0, 245, 212, 0.08);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto 6rem auto;
+            padding-left: 2rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: calc(-2rem - 7px);
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--bg-main);
+            border: 2px solid var(--accent);
+            transition: background 0.3s;
+        }
+
+        .timeline-item:hover::before {
+            background: var(--accent);
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        .time-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .date {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .company {
+            font-weight: 500;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .role-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .timeline-body {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .timeline-body ul {
+            list-style-type: none;
+        }
+
+        .timeline-body li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-body li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Footer / Contact */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 50px 0;
+            background: #080B13;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-left p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero h1 { font-size: 3rem; }
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+            .bento-card.col-2 { grid-column: span 1; }
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2.25rem; }
+            .bento-grid { grid-template-columns: 1fr; }
+            .cta-group { flex-direction: column; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">ZB<span style="color: var(--accent);">.</span></a>
+            <nav>
+                <a href="#about">Overview</a>
+                <a href="#skills">Expertise</a>
+                <a href="#experience">Experience</a>
+                <a href="mailto:bernabezaldy@gmail.com">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-tag mono">Senior MEP Project & Commissioning Leader</div>
+            <h1>Engineering High-Scale Energy & <br><span class="gradient-text">MEP Infrastructure.</span></h1>
+            <p>Dynamic Senior Mechanical Engineer with 18+ years of global experience orchestration complex oil & gas facility installations, industrial HVAC systems, and materials reliability execution framework across world-class infrastructure initiatives.</p>
+            <div class="cta-group">
+                <a href="mailto:bernabezaldy@gmail.com" class="btn btn-primary">Connect Globally</a>
+                <a href="https://www.linkedin.com/in/zaldybernabe-me" target="_blank" class="btn btn-secondary">View LinkedIn Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" id="about">
+        <h2 class="section-title"><span class="mono">01/</span> Core Metrics</h2>
+        <div class="bento-grid">
+            <div class="bento-card">
+                <div class="card-num gradient-text">18+</div>
+                <div class="card-title">Years Experience</div>
+                <div class="card-desc">Delivering international scale MEP, industrial, and oil & gas engineering projects.</div>
+            </div>
+            <div class="bento-card col-2">
+                <div class="card-num">KOC & Aramco</div>
+                <div class="card-title">Strategic Client Compliance</div>
+                <div class="card-desc">Deep lifecycle expertise aligning cross-functional teams with rigorous Middle Eastern energy operator standards.</div>
+            </div>
+            <div class="bento-card col-2">
+                <div class="card-num">SAP & eBEAMS</div>
+                <div class="card-title">Materials Reliability & Supply Chain ERP</div>
+                <div class="card-desc">Advanced data handling for multi-million dollar procurement pipelines, creating asset management tracking logic that avoids logistical friction.</div>
+            </div>
+            <div class="bento-card">
+                <div class="card-num gradient-text">8 Bldgs</div>
+                <div class="card-title">Ductwork Optimization</div>
+                <div class="card-desc">Successfully designed and led consultant-approved system modifications to slash project costs.</div>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="skills"><span class="mono">02/</span> Technical Matrix</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Project & Engineering Management</h3>
+                <div class="tags">
+                    <span class="tag">MEP Project Management</span>
+                    <span class="tag">HVAC, Plumbing & Firefighting</span>
+                    <span class="tag">Primavera P6 & MS Project</span>
+                    <span class="tag">Oil & Gas Facilities Engineering</span>
+                    <span class="tag">Resource Planning & Cost Control</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>HVAC & Commissioning Expertise</h3>
+                <div class="tags">
+                    <span class="tag">HVAC Design & Load Calculations</span>
+                    <span class="tag">Pre-Commissioning & TAB Testing</span>
+                    <span class="tag">BMS & PLC Troubleshooting</span>
+                    <span class="tag">System Integration & Performance Optimization</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Procurement & Compliance</h3>
+                <div class="tags">
+                    <span class="tag">SAP & eBEAMS ERP Systems</span>
+                    <span class="tag">Technical Submittals & Evaluation</span>
+                    <span class="tag">QA/QC Inspection & Code Tracking</span>
+                    <span class="tag">As-Built & Redline Documentation</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>International Codes & Standards</h3>
+                <div class="tags">
+                    <span class="tag">ISO</span>
+                    <span class="tag">ASME / ASTM</span>
+                    <span class="tag">API / ANSI</span>
+                    <span class="tag">NFPA / SMACNA</span>
+                    <span class="tag">KOC & Aramco Standards</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="experience"><span class="mono">03/</span> Career Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="time-meta">
+                    <span class="date">2023 – PRESENT</span>
+                    <span class="company">Gulf Spic / Kuwait Oil Company (KOC)</span>
+                </div>
+                <div class="role-title">Technical Assistant – Materials / Gas Reliability Support</div>
+                <div class="timeline-body">
+                    <ul>
+                        <li>Coordinate end-to-end material approvals, RFQ trackings, and supplier engagement parameters via SAP/eBEAMS.</li>
+                        <li>Lead structural materials reliability targets including CAT ID/ICMR creation and specification verification.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time-meta">
+                    <span class="date">2021 – 2022</span>
+                    <span class="company">AlSaif Company, Heavy Oil Project – KOC South Ratqa</span>
+                </div>
+                <div class="role-title">Supervisor – Building Maintenance & HVAC</div>
+                <div class="timeline-body">
+                    <ul>
+                        <li>Orchestrated multidisciplinary maintenance of critical HVAC, civil, plumbing, firefighting, and electrical systems.</li>
+                        <li>Supported complex PLC system troubleshooting parameters for high-stakes fire and safety water grids.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time-meta">
+                    <span class="date">2019 – 2021</span>
+                    <span class="company">Consolidated Contractors International Company (CCC) — KOC</span>
+                </div>
+                <div class="role-title">MEP Commissioning Engineer</div>
+                <div class="timeline-body">
+                    <ul>
+                        <li>Led end-to-end pre-commissioning and testing phases for HVAC and mechanical grids under the Lower Fars Heavy Oil Development Program.</li>
+                        <li>Delivered certified TAB protocols, operational engineering sign-offs, and final as-built packages.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time-meta">
+                    <span class="date">2017 – 2019</span>
+                    <span class="company">Consolidated Contractors International Company (CCC) — Kuwait</span>
+                </div>
+                <div class="role-title">MEP Engineer / Piping Engineer</div>
+                <div class="timeline-body">
+                    <ul>
+                        <li>Supervised mechanical field installation activities including industrial piping fabrication and complex pressure test lines.</li>
+                        <li>Resolved design mismatches using technical queries (TQs), maximizing onsite team production speed.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time-meta">
+                    <span class="date">2016</span>
+                    <span class="company">Fastway Contracting / Saudi Oger Ltd. — Saudi Arabia</span>
+                </div>
+                <div class="role-title">QA/QC & Commissioning Engineer</div>
+                <div class="timeline-body">
+                    <ul>
+                        <li>Managed quality controls and functional handovers for massive chiller plants and primary pump configurations at the Aramco King Abdulaziz Center.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h3>Zaldy L. Bernabe</h3>
+                <p>BSME | Board of Director, PSME Kuwait (2023–2026)</p>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:bernabezaldy@gmail.com">Email</a>
+                <a href="tel:+96555064832">Kuwait: +965 55064832</a>
+                <a href="https://www.linkedin.com/in/zaldybernabe-me" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
