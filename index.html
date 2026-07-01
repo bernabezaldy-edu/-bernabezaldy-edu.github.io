@@ -169,7 +169,7 @@
             margin-bottom: 16px;
             border: 1px solid #c3e6cb;
         }
-
+noo j
         [data-fs-success].show {
             display: block;
         }
@@ -256,613 +256,233 @@
 </html>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaldy Bernabe | Senior MEP Project & Commissioning Leader</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-main: #0B0F19;
-            --bg-card: #151D30;
-            --bg-card-hover: #1E2942;
-            --text-main: #F3F4F6;
-            --text-muted: #9CA3AF;
-            --accent: #00F5D4;
-            --accent-gradient: linear-gradient(135deg, #00F5D4 0%, #00B4D8 100%);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --font-sans: 'Inter', sans-serif;
-            --font-mono: 'JetBrains Mono', monospace;
+    <title>Zaldy L. Bernabe | Executive Portfolio</title>
+    <!-- Tailwind CSS for Modern Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AlpineJS for Interactive Tabs/Mobile Menu -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#1A365D',
+                            blue: '#2B6CB0',
+                            teal: '#319795',
+                            dark: '#2D3748',
+                            light: '#F7FAFC'
+                        }
+                    }
+                }
+            }
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            font-family: var(--font-sans);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-main);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--bg-card);
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent);
-        }
-
-        /* Utilities */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .gradient-text {
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .mono {
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent);
-        }
-
-        /* Header Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(11, 15, 25, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.25rem;
-            letter-spacing: -0.5px;
-            text-decoration: none;
-            color: var(--text-main);
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 2rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 180px 0 100px 0;
-            position: relative;
-            background: radial-gradient(circle at 80% 20%, rgba(0, 245, 212, 0.05) 0%, transparent 50%);
-        }
-
-        .hero-tag {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: rgba(0, 245, 212, 0.06);
-            border: 1px solid rgba(0, 245, 212, 0.2);
-            border-radius: 100px;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin-bottom: 2.5rem;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.85rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .btn-primary {
-            background: var(--accent-gradient);
-            color: #000;
-            box-shadow: 0 4px 20px rgba(0, 245, 212, 0.25);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(0, 245, 212, 0.4);
-        }
-
-        .btn-secondary {
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .btn-secondary:hover {
-            background: var(--border-color);
-            transform: translateY(-2px);
-        }
-
-        /* Bento Grid Highlights */
-        .section-title {
-            font-size: 2.25rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 3rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .section-title::after {
-            content: '';
-            height: 1px;
-            flex-grow: 1;
-            background: var(--border-color);
-        }
-
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 6rem;
-        }
-
-        .bento-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .bento-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(0, 245, 212, 0.3);
-            background: var(--bg-card-hover);
-        }
-
-        .bento-card.col-2 {
-            grid-column: span 2;
-        }
-
-        .card-num {
-            font-family: var(--font-mono);
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--text-main);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--text-main);
-        }
-
-        .card-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Skills Matrix Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-bottom: 6rem;
-        }
-
-        .skill-category {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2.5rem;
-        }
-
-        .skill-category h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-main);
-            border-left: 3px solid var(--accent);
-            padding-left: 0.75rem;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .tag {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-color);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: var(--text-main);
-            transition: all 0.2s ease;
-        }
-
-        .tag:hover {
-            background: rgba(0, 245, 212, 0.08);
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        /* Timeline Section */
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto 6rem auto;
-            padding-left: 2rem;
-            border-left: 2px solid var(--border-color);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3.5rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: calc(-2rem - 7px);
-            top: 6px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--bg-main);
-            border: 2px solid var(--accent);
-            transition: background 0.3s;
-        }
-
-        .timeline-item:hover::before {
-            background: var(--accent);
-            box-shadow: 0 0 10px var(--accent);
-        }
-
-        .time-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .date {
-            font-family: var(--font-mono);
-            color: var(--accent);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .company {
-            font-weight: 500;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .role-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
-
-        .timeline-body {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .timeline-body ul {
-            list-style-type: none;
-        }
-
-        .timeline-body li {
-            position: relative;
-            padding-left: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-body li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        /* Footer / Contact */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 50px 0;
-            background: #080B13;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .footer-left p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-top: 0.5rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 968px) {
-            .hero h1 { font-size: 3rem; }
-            .bento-grid { grid-template-columns: repeat(2, 1fr); }
-            .bento-card.col-2 { grid-column: span 1; }
-            .skills-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 640px) {
-            .hero h1 { font-size: 2.25rem; }
-            .bento-grid { grid-template-columns: 1fr; }
-            .cta-group { flex-direction: column; }
-            nav { display: none; }
-        }
-    </style>
+    </script>
 </head>
-<body>
+<body class="bg-brand-light text-brand-dark font-sans antialiased">
 
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">ZB<span style="color: var(--accent);">.</span></a>
-            <nav>
-                <a href="#about">Overview</a>
-                <a href="#skills">Expertise</a>
-                <a href="#experience">Experience</a>
-                <a href="mailto:bernabezaldy@gmail.com">Contact</a>
-            </nav>
+    <!-- HERO SECTION -->
+    <header class="relative bg-gradient-to-r from-brand-navy via-slate-800 to-brand-dark text-white overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-brand-teal/20 via-transparent to-transparent"></div>
+        <div class="max-w-6xl mx-auto px-6 py-20 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="space-y-6 max-w-3xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-teal/20 border border-brand-teal/30 rounded-full text-brand-teal text-sm font-semibold tracking-wide uppercase">
+                        <i class="fa-solid var(--fa-icon) fa-microchip-ai animate-pulse"></i> AI-Enhanced Project Management
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-black tracking-tight leading-tight">
+                        ZALDY L. BERNABE, <span class="text-brand-teal">BSME</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 font-medium">
+                        Senior MEP Project & Commissioning Manager | Mechanical / HVAC | Oil & Gas | Materials Reliability
+                    </p>
+                    <p class="text-gray-400 text-base leading-relaxed">
+                        Senior Mechanical Engineer with 18+ years of international experience delivering oil & gas and MEP projects across engineering, construction, commissioning, and materials reliability. Proven track record supporting KOC and major EPC contractors.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="mailto:bernabezaldy@gmail.com" class="px-6 py-3 bg-brand-teal hover:bg-teal-600 text-white font-bold rounded-lg transition shadow-lg shadow-brand-teal/20 flex items-center gap-2">
+                            <i class="fa-solid fa-envelope"></i> Contact Me
+                        </a>
+                        <a href="https://linkedin.com/in/zaldybernabe-me" target="_blank" class="px-6 py-3 bg-slate-700/50 hover:bg-slate-700 text-white font-semibold rounded-lg border border-slate-600 transition flex items-center gap-2">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Fast Info Card -->
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl w-full md:w-80 space-y-4 shadow-xl">
+                    <h3 class="font-bold text-lg text-brand-teal border-b border-white/10 pb-2">Quick Information</h3>
+                    <div class="space-y-3 text-sm text-gray-300">
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-location-dot text-brand-teal w-5"></i> Kuwait</div>
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-phone text-brand-teal w-5"></i> +965 55064832</div>
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-briefcase text-brand-teal w-5"></i> 18+ Years Experience</div>
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-graduation-cap text-brand-teal w-5"></i> BS Mechanical Engineering</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-tag mono">Senior MEP Project & Commissioning Leader</div>
-            <h1>Engineering High-Scale Energy & <br><span class="gradient-text">MEP Infrastructure.</span></h1>
-            <p>Dynamic Senior Mechanical Engineer with 18+ years of global experience orchestration complex oil & gas facility installations, industrial HVAC systems, and materials reliability execution framework across world-class infrastructure initiatives.</p>
-            <div class="cta-group">
-                <a href="mailto:bernabezaldy@gmail.com" class="btn btn-primary">Connect Globally</a>
-                <a href="https://www.linkedin.com/in/zaldybernabe-me" target="_blank" class="btn btn-secondary">View LinkedIn Profile</a>
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
+        
+        <!-- LEFT COLUMN: SKILLS & AI SPOTLIGHT -->
+        <div class="space-y-8 lg:col-span-1">
+            <!-- AI Toolkit Feature Card -->
+            <div class="bg-gradient-to-br from-slate-900 to-brand-navy text-white p-6 rounded-2xl shadow-xl border border-brand-teal/20 relative overflow-hidden">
+                <div class="absolute -right-8 -bottom-8 text-brand-teal/10 text-9xl font-bold"><i class="fa-solid fa-robot"></i></div>
+                <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-wand-magic-sparkles text-brand-teal"></i> AI Masterclass Core
+                </h3>
+                <p class="text-xs text-gray-400 mb-4 uppercase tracking-wider font-semibold">Coursiv Certified Mastery</p>
+                <div class="grid grid-cols-2 gap-3 text-center">
+                    <div class="bg-white/5 rounded-xl p-3 border border-white/5 hover:border-brand-teal/30 transition">
+                        <div class="text-brand-teal font-bold text-sm">ChatGPT</div>
+                        <span class="text-[10px] text-gray-400">Prompt Eng.</span>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-3 border border-white/5 hover:border-brand-teal/30 transition">
+                        <div class="text-brand-teal font-bold text-sm">Claude</div>
+                        <span class="text-[10px] text-gray-400">Doc Analysis</span>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-3 border border-white/5 hover:border-brand-teal/30 transition">
+                        <div class="text-brand-teal font-bold text-sm">Gemini</div>
+                        <span class="text-[10px] text-gray-400">Data Analytics</span>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-3 border border-white/5 hover:border-brand-teal/30 transition">
+                        <div class="text-brand-teal font-bold text-sm">Lovable</div>
+                        <span class="text-[10px] text-gray-400">No-Code Hubs</span>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-3 border border-white/5 hover:border-brand-teal/30 transition">
+                        <div class="text-brand-teal font-bold text-sm">Midjourney</div>
+                        <span class="text-[10px] text-gray-400">Visual Concepts</span>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-3 border border-white/5 hover:border-brand-teal/30 transition">
+                        <div class="text-brand-teal font-bold text-sm">Jasper</div>
+                        <span class="text-[10px] text-gray-400">Technical Copy</span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <div class="container" id="about">
-        <h2 class="section-title"><span class="mono">01/</span> Core Metrics</h2>
-        <div class="bento-grid">
-            <div class="bento-card">
-                <div class="card-num gradient-text">18+</div>
-                <div class="card-title">Years Experience</div>
-                <div class="card-desc">Delivering international scale MEP, industrial, and oil & gas engineering projects.</div>
-            </div>
-            <div class="bento-card col-2">
-                <div class="card-num">KOC & Aramco</div>
-                <div class="card-title">Strategic Client Compliance</div>
-                <div class="card-desc">Deep lifecycle expertise aligning cross-functional teams with rigorous Middle Eastern energy operator standards.</div>
-            </div>
-            <div class="bento-card col-2">
-                <div class="card-num">SAP & eBEAMS</div>
-                <div class="card-title">Materials Reliability & Supply Chain ERP</div>
-                <div class="card-desc">Advanced data handling for multi-million dollar procurement pipelines, creating asset management tracking logic that avoids logistical friction.</div>
-            </div>
-            <div class="bento-card">
-                <div class="card-num gradient-text">8 Bldgs</div>
-                <div class="card-title">Ductwork Optimization</div>
-                <div class="card-desc">Successfully designed and led consultant-approved system modifications to slash project costs.</div>
-            </div>
-        </div>
-
-        <h2 class="section-title" id="skills"><span class="mono">02/</span> Technical Matrix</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Project & Engineering Management</h3>
-                <div class="tags">
-                    <span class="tag">MEP Project Management</span>
-                    <span class="tag">HVAC, Plumbing & Firefighting</span>
-                    <span class="tag">Primavera P6 & MS Project</span>
-                    <span class="tag">Oil & Gas Facilities Engineering</span>
-                    <span class="tag">Resource Planning & Cost Control</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>HVAC & Commissioning Expertise</h3>
-                <div class="tags">
-                    <span class="tag">HVAC Design & Load Calculations</span>
-                    <span class="tag">Pre-Commissioning & TAB Testing</span>
-                    <span class="tag">BMS & PLC Troubleshooting</span>
-                    <span class="tag">System Integration & Performance Optimization</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Procurement & Compliance</h3>
-                <div class="tags">
-                    <span class="tag">SAP & eBEAMS ERP Systems</span>
-                    <span class="tag">Technical Submittals & Evaluation</span>
-                    <span class="tag">QA/QC Inspection & Code Tracking</span>
-                    <span class="tag">As-Built & Redline Documentation</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>International Codes & Standards</h3>
-                <div class="tags">
-                    <span class="tag">ISO</span>
-                    <span class="tag">ASME / ASTM</span>
-                    <span class="tag">API / ANSI</span>
-                    <span class="tag">NFPA / SMACNA</span>
-                    <span class="tag">KOC & Aramco Standards</span>
+            <!-- Technical Core Skills Stack -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6">
+                <h3 class="text-lg font-bold text-brand-navy border-b border-gray-100 pb-3">Technical Expertise</h3>
+                
+                <div class="space-y-4">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wide text-brand-blue">Project Management</span>
+                        <p class="text-sm text-gray-600 mt-1">MEP, Planning (Primavera P6, MS Project), Resource Scheduling, Cost Control, Oil & Gas CPF.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wide text-brand-blue">HVAC & Commissioning</span>
+                        <p class="text-sm text-gray-600 mt-1">Equipment Selection, Testing & TAB, Troubleshooting, Optimization, BMS & PLC Systems.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wide text-brand-blue">Procurement & ERP</span>
+                        <p class="text-sm text-gray-600 mt-1">SAP, eBEAMS, Technical Evaluations, Supplier Management, Logistics Tracking.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wide text-brand-blue">Codes & Compliance</span>
+                        <p class="text-sm text-gray-600 mt-1">KOC, Aramco Standards, ISO, ASME, ASTM, API, NFPA, SMACNA, UL.</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <h2 class="section-title" id="experience"><span class="mono">03/</span> Career Timeline</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="time-meta">
-                    <span class="date">2023 – PRESENT</span>
-                    <span class="company">Gulf Spic / Kuwait Oil Company (KOC)</span>
+        <!-- RIGHT COLUMN: CHRONOLOGY & ACHIEVEMENTS -->
+        <div class="lg:col-span-2 space-y-12">
+            
+            <!-- Highlighted Impact Section -->
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-brand-navy flex items-center gap-3">
+                    <i class="fa-solid fa-trophy text-amber-500"></i> Selected Impact & Achievements
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex gap-4 items-start">
+                        <div class="p-3 bg-brand-teal/10 rounded-lg text-brand-teal"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <h4 class="font-bold text-sm text-brand-navy">Workflow Optimization</h4>
+                            <p class="text-xs text-gray-600 mt-1">Integrated advanced generative AI tools to streamline technical document cross-referencing, cutting material submittal prep times.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex gap-4 items-start">
+                        <div class="p-3 bg-brand-blue/10 rounded-lg text-brand-blue"><i class="fa-solid fa-building-shield"></i></div>
+                        <div>
+                            <h4 class="font-bold text-sm text-brand-navy">KOC Heavy Oil Program</h4>
+                            <p class="text-xs text-gray-600 mt-1">Delivered turnkey MEP commissioning and handover including strict HVAC TAB and documentation metrics.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="role-title">Technical Assistant – Materials / Gas Reliability Support</div>
-                <div class="timeline-body">
-                    <ul>
-                        <li>Coordinate end-to-end material approvals, RFQ trackings, and supplier engagement parameters via SAP/eBEAMS.</li>
-                        <li>Lead structural materials reliability targets including CAT ID/ICMR creation and specification verification.</li>
-                    </ul>
-                </div>
-            </div>
+            </section>
 
-            <div class="timeline-item">
-                <div class="time-meta">
-                    <span class="date">2021 – 2022</span>
-                    <span class="company">AlSaif Company, Heavy Oil Project – KOC South Ratqa</span>
-                </div>
-                <div class="role-title">Supervisor – Building Maintenance & HVAC</div>
-                <div class="timeline-body">
-                    <ul>
-                        <li>Orchestrated multidisciplinary maintenance of critical HVAC, civil, plumbing, firefighting, and electrical systems.</li>
-                        <li>Supported complex PLC system troubleshooting parameters for high-stakes fire and safety water grids.</li>
-                    </ul>
-                </div>
-            </div>
+            <!-- Professional Timeline -->
+            <section class="space-y-6">
+                <h2 class="text-2xl font-bold text-brand-navy flex items-center gap-3">
+                    <i class="fa-solid fa-timeline text-brand-blue"></i> Professional Journey
+                </h2>
+                <div class="relative border-l border-gray-200 ml-4 space-y-8">
+                    <!-- Job 1 -->
+                    <div class="relative pl-8">
+                        <span class="absolute -left-2.5 top-1.5 bg-brand-teal w-5 h-5 rounded-full border-4 border-white shadow"></span>
+                        <span class="text-xs font-bold text-brand-teal bg-brand-teal/10 px-2 py-0.5 rounded">2023 – Present</span>
+                        <h3 class="text-lg font-bold text-brand-navy mt-1">Technical Assistant – Materials / Gas Reliability Support</h3>
+                        <p class="text-sm font-medium text-gray-500">Gulf Spic General Trading & Contracting Co. (Supporting KOC) — Kuwait</p>
+                        <ul class="text-sm text-gray-600 mt-2 list-disc pl-4 space-y-1">
+                            <li>Coordinate material approvals, RFQ follow-ups, and supplier management using SAP/eBEAMS.</li>
+                            <li>Utilize LLMs (ChatGPT, Claude, Gemini) to perform deep comparative analysis on international technical standards and vendor specs.</li>
+                        </ul>
+                    </div>
 
-            <div class="timeline-item">
-                <div class="time-meta">
-                    <span class="date">2019 – 2021</span>
-                    <span class="company">Consolidated Contractors International Company (CCC) — KOC</span>
-                </div>
-                <div class="role-title">MEP Commissioning Engineer</div>
-                <div class="timeline-body">
-                    <ul>
-                        <li>Led end-to-end pre-commissioning and testing phases for HVAC and mechanical grids under the Lower Fars Heavy Oil Development Program.</li>
-                        <li>Delivered certified TAB protocols, operational engineering sign-offs, and final as-built packages.</li>
-                    </ul>
-                </div>
-            </div>
+                    <!-- Job 2 -->
+                    <div class="relative pl-8">
+                        <span class="absolute -left-2.5 top-1.5 bg-gray-400 w-5 h-5 rounded-full border-4 border-white shadow"></span>
+                        <span class="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded">2021 – 2022</span>
+                        <h3 class="text-lg font-bold text-brand-navy mt-1">Supervisor – Building Maintenance & HVAC</h3>
+                        <p class="text-sm font-medium text-gray-500">AlSaif Company, Heavy Oil Project Support Complex – KOC South Ratqa</p>
+                        <ul class="text-sm text-gray-600 mt-2 list-disc pl-4 space-y-1">
+                            <li>Led multidisciplinary maintenance of HVAC, civil, plumbing, firefighting, and electrical systems.</li>
+                        </ul>
+                    </div>
 
-            <div class="timeline-item">
-                <div class="time-meta">
-                    <span class="date">2017 – 2019</span>
-                    <span class="company">Consolidated Contractors International Company (CCC) — Kuwait</span>
+                    <!-- Job 3 -->
+                    <div class="relative pl-8">
+                        <span class="absolute -left-2.5 top-1.5 bg-gray-400 w-5 h-5 rounded-full border-4 border-white shadow"></span>
+                        <span class="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded">2019 – 2021</span>
+                        <h3 class="text-lg font-bold text-brand-navy mt-1">MEP Commissioning Engineer</h3>
+                        <p class="text-sm font-medium text-gray-500">Consolidated Contractors International Company (CCC) — Kuwait</p>
+                        <ul class="text-sm text-gray-600 mt-2 list-disc pl-4 space-y-1">
+                            <li>Led end-to-end commissioning of HVAC systems for Lower Fars Heavy Oil Development Program.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="role-title">MEP Engineer / Piping Engineer</div>
-                <div class="timeline-body">
-                    <ul>
-                        <li>Supervised mechanical field installation activities including industrial piping fabrication and complex pressure test lines.</li>
-                        <li>Resolved design mismatches using technical queries (TQs), maximizing onsite team production speed.</li>
-                    </ul>
-                </div>
-            </div>
+            </section>
 
-            <div class="timeline-item">
-                <div class="time-meta">
-                    <span class="date">2016</span>
-                    <span class="company">Fastway Contracting / Saudi Oger Ltd. — Saudi Arabia</span>
+            <!-- Credentials Footer Area -->
+            <section class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-bold text-brand-navy mb-2"><i class="fa-solid fa-building-columns text-gray-400 mr-2"></i> Affiliations</h4>
+                    <p class="text-sm text-gray-600">Board of Director, PSME Kuwait (2023–2026)</p>
+                    <p class="text-sm text-gray-600">Member, Saudi Council of Engineers</p>
                 </div>
-                <div class="role-title">QA/QC & Commissioning Engineer</div>
-                <div class="timeline-body">
-                    <ul>
-                        <li>Managed quality controls and functional handovers for massive chiller plants and primary pump configurations at the Aramco King Abdulaziz Center.</li>
-                    </ul>
+                <div>
+                    <h4 class="font-bold text-brand-navy mb-2"><i class="fa-solid fa-award text-gray-400 mr-2"></i> Other Credentials</h4>
+                    <p class="text-sm text-gray-600">Planning & Scheduling Certification (PMI)</p>
+                    <p class="text-sm text-gray-600">Advanced Instrumentation & Control Setup</p>
                 </div>
-            </div>
+            </section>
+
         </div>
-    </div>
+    </main>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-left">
-                <h3>Zaldy L. Bernabe</h3>
-                <p>BSME | Board of Director, PSME Kuwait (2023–2026)</p>
-            </div>
-            <div class="footer-links">
-                <a href="mailto:bernabezaldy@gmail.com">Email</a>
-                <a href="tel:+96555064832">Kuwait: +965 55064832</a>
-                <a href="https://www.linkedin.com/in/zaldybernabe-me" target="_blank">LinkedIn</a>
-            </div>
-        </div>
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-gray-400 text-center py-8 text-sm border-t border-gray-800">
+        <p>&copy; 2026 Zaldy L. Bernabe. Powered by Advanced Project Frameworks.</p>
     </footer>
 
 </body>
 </html>
+
